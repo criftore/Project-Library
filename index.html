@@ -7,6 +7,81 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+      <h2 class="title">MY LIBRARY</h2>
+      <div class="card-container">
+        <div class="cardContent">
+          <img class="bookCover" src="" />
+          <div class="bookTitle">Title</div>
+          <div class="bookAuthor">Author</div>
+          <div class="bookPages">Pages</div>
+          <div class="isRead">
+            <input
+              type="radio"
+              class="isRead"
+              id="Read"
+              name="status"
+              value="Read"
+            />
+            <label for="Read">Read</label>
+            <input
+              type="radio"
+              class="isRead"
+              id="notRead"
+              name="status"
+              value="notRead"
+            />
+            <label for="notRead">Not Read</label>
+          </div>
+
+          <button class="deleteBook">Delete Book</button>
+        </div>
+        <div class="card-shadaw"></div>
+      </div>
+      <div class="action">
+        <button class="addBook" command="show-modal" commandfor="my-dialog">
+          New Book
+        </button>
+      </div>
+
+      <dialog id="my-dialog">
+        <div class="formHeader"><h3>Add New Book</h3></div>
+        <form id="bookForm">
+          <div class="formRow">
+            <label for="bookTitle">Title :</label>
+            <input type="text" id="bookTitle" />
+          </div>
+          <div class="formRow">
+            <label for="bookAuthor">Author :</label>
+            <input type="text" id="bookAuthor" />
+          </div>
+          <div class="formRow">
+            <label for="bookPages">Pages :</label>
+            <input type="number" id="bookPages" />
+          </div>
+          <div class="formCover">
+            <label for="bookCover">Cover</label>
+            <input type="file" id="bookCover" accept="image/*" />
+          </div>
+
+          <div class="formStatus">
+            <label for="bookStatus">Already read it? </label>
+            <select id="bookStatus">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="btnForm">
+            <button type="submit">Add Book</button>
+            <button type="button" id="closeDialog" formmethod="dialog">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
