@@ -8,7 +8,10 @@ body,
 html {
   height: 100vh;
   width: 100vw;
+  font-family: sans-serif;
 }
+
+/* Container Start */
 
 .container {
   display: grid;
@@ -16,128 +19,116 @@ html {
   gap: 10px;
 }
 
-.actionBtn {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.statusBtn,
-.deleteBtn {
-  background: none; /* Menghapus latar belakang abu-abu */
-  border: none; /* Menghapus garis tepi kotak */
-  padding: 5px; /* Memberikan ruang klik yang nyaman */
-  cursor: pointer; /* Mengubah kursor menjadi jari penunjuk */
-  height: max-content;
-  width: max-content;
-}
-
-.btnIcon {
-  width: 24px;
-  height: 24px;
-  display: block;
-  pointer-events: none;
-}
-
-.title {
-  background-color: grey;
+.containerHeader {
   width: 100vw;
   text-align: center;
   color: white;
+  background-color: grey;
   padding: 30px;
-  box-shadow: 0px 0px 10px 5px grey;
+  box-shadow: 0 0 10px 5px grey;
 }
 
-.bookTitle {
-  align-self: center;
-}
-
-.bookCover {
-  align-self: center;
-  height: 200px;
-  width: 180px;
-  border-radius: 20px;
-}
-
-.card-container {
+.cardContainer {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: max-content;
-  width: auto;
-  height: auto;
   justify-content: safe center;
   gap: 20px;
-
   padding: 30px;
   overflow-x: auto;
   overflow-y: hidden;
+  width: auto;
+  height: auto;
+  font-family: "Times New Roman", Times, serif;
 }
+
 .cardContent {
-  height: max-content;
-  width: 200px;
-  background-color: grey;
-  justify-content: center;
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  justify-content: center;
+  height: max-content;
+  width: 200px;
   padding: 10px;
+  border-radius: 20px;
+  background-color: grey;
   color: white;
   font-weight: bold;
 }
 
-.statusBtn,
-.deleteBtn {
-  filter: brightness(0) invert(1);
+.containerFooter {
+  justify-self: center;
 }
 
-.addBook {
-  border: none;
+.addButton {
   padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: grey;
   color: white;
   font-weight: bolder;
-  background-color: grey;
-  border-radius: 10px;
 }
 
-.action {
-  justify-self: center;
-}
+/* Container End */
 
-#my-dialog {
+/* Dialog Start */
+
+#myDialog {
   align-self: center;
   justify-self: center;
-  max-width: 350px;
-  border-radius: 20px;
   background-color: white;
   border: 3px solid grey;
+  max-width: 350px;
+  border-radius: 20px;
 }
 
-.formHeader,
-#bookForm {
+.dialogHeader {
+  background-color: grey;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.dialogHeader > h3 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Form Start */
+
+#containerForm {
+  display: flex;
+  flex-direction: column;
   padding: 10px 20px;
 }
 
 .formRow,
-.formCover,
-.formStatus,
-.btnForm {
+.formRowCover,
+.formRowStatus,
+.buttonForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
 }
-#bookForm {
-  display: flex;
-  flex-direction: column;
-}
-label {
+
+.formRowCover > input::file-selector-button,
+.formRowStatus > select,
+.buttonForm > button,
+.formRow input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: grey;
+  color: white;
+  border: none;
   font-weight: bolder;
+  cursor: pointer;
 }
 
-.btnForm {
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 20px;
-  cursor: pointer;
+label {
+  font-weight: bolder;
+  color: black;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.5px grey;
 }
 
 .formRow label {
@@ -146,50 +137,60 @@ label {
   text-align: center;
 }
 
-.formCover {
-  text-align-last: center;
-}
-
-.formCover > input::file-selector-button,
-.formStatus > select {
-  background-color: grey;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
 .formRow input {
   flex-grow: 1;
   width: 70%;
-  border-radius: 10px;
-  border: none;
-  background-color: grey;
-  color: white;
-  padding: 5px 0;
   text-align: center;
 }
 
-h3 {
-  text-align: center;
-  color: white;
-  font-weight: bolder;
+.formRowCover {
+  text-align-last: center;
 }
 
-.formHeader {
-  background-color: grey;
-  width: 100%;
-}
-
-.btnForm > button {
-  background-color: grey;
-  border: none;
-  padding: 10px 5px;
-  border-radius: 10px;
-  flex: 1;
-  color: white;
-  font-weight: bolder;
+.buttonForm {
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
   cursor: pointer;
 }
+
+/* Dialog And Form End  */
+
+/* DOM cardContainer Start */
+
+.bookCover {
+  align-self: center;
+  height: 200px;
+  width: 180px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.bookTitle {
+  align-self: center;
+}
+
+.buttonBook {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  pointer-events: none;
+}
+
+.statusButton,
+.deleteButton {
+  padding: 5px;
+  filter: brightness(0) invert(1);
+  height: max-content;
+  width: max-content;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* DOM cardContainer End */

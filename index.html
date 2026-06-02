@@ -3,76 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LIBRARY WEB</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h2 class="title">MY LIBRARY</h2>
-      <div class="card-container">
-        <div class="cardContent">
-          <img class="bookCover" src="" />
-          <div class="bookTitle">Title</div>
-          <div class="bookAuthor">Author</div>
-          <div class="bookPages">Pages</div>
-          <div class="isRead">
-            <input
-              type="radio"
-              class="isRead"
-              id="Read"
-              name="status"
-              value="Read"
-            />
-            <label for="Read">Read</label>
-            <input
-              type="radio"
-              class="isRead"
-              id="notRead"
-              name="status"
-              value="notRead"
-            />
-            <label for="notRead">Not Read</label>
-          </div>
-
-          <button class="deleteBook">Delete Book</button>
-        </div>
-        <div class="card-shadaw"></div>
+      <h2 class="containerHeader">CRIFTORE LIBRARY</h2>
+      <div class="cardContainer">
+        <div class="cardContent"></div>
+        <div class="cardShadaw"></div>
       </div>
-      <div class="action">
-        <button class="addBook" command="show-modal" commandfor="my-dialog">
+      <div class="containerFooter">
+        <button class="addButton" command="show-modal" commandfor="myDialog">
           New Book
         </button>
       </div>
 
-      <dialog id="my-dialog">
-        <div class="formHeader"><h3>Add New Book</h3></div>
-        <form id="bookForm">
+      <dialog id="myDialog">
+        <div class="dialogHeader"><h3>Add New Book</h3></div>
+        <form id="containerForm">
           <div class="formRow">
-            <label for="bookTitle">Title :</label>
-            <input type="text" id="bookTitle" />
+            <label for="formTitle">Title :</label>
+            <input type="text" id="formTitle" />
           </div>
           <div class="formRow">
-            <label for="bookAuthor">Author :</label>
-            <input type="text" id="bookAuthor" />
+            <label for="formAuthor">Author :</label>
+            <input type="text" id="formAuthor" />
           </div>
           <div class="formRow">
-            <label for="bookPages">Pages :</label>
-            <input type="number" id="bookPages" />
+            <label for="formPages">Pages :</label>
+            <input type="number" id="formPages" />
           </div>
-          <div class="formCover">
-            <label for="bookCover">Cover</label>
-            <input type="file" id="bookCover" accept="image/*" />
+          <div class="formRowCover">
+            <label for="formCover">Cover</label>
+            <input type="file" id="formCover" accept="image/*" />
           </div>
 
-          <div class="formStatus">
-            <label for="bookStatus">Already read it? </label>
-            <select id="bookStatus">
+          <div class="formRowStatus">
+            <label for="formStatus">Already read it? </label>
+            <select id="formStatus">
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
           </div>
-
-          <div class="btnForm">
+          <div class="buttonForm">
             <button type="submit">Add Book</button>
             <button type="button" id="closeDialog" formmethod="dialog">
               Cancel
