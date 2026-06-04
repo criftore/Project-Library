@@ -165,10 +165,10 @@ containerForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
 
- const title = formTitleElement.value;
-  const author = formAuthorElement.value;
-  const pages = formPagesElement.value;
-  const status = formStatusElement.value;
+ const title = formTitle.value;
+  const author = formAuthor.value;
+  const pages = formPages.value;
+  const status = formStatus.value;
 
   //  Cover Default And Generator
   const fileCover = formCover.files[0];
