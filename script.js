@@ -168,7 +168,7 @@ containerForm.addEventListener("submit", (event) => {
  const title = formTitleElement.value;
   const author = formAuthorElement.value;
   const pages = formPagesElement.value;
-  const status = formStatusElement.value
+  const status = formStatusElement.value;
 
   //  Cover Default And Generator
   const fileCover = formCover.files[0];
@@ -185,7 +185,7 @@ containerForm.addEventListener("submit", (event) => {
   storeBook(title, author, pages, status, endCover);
   renderWeb();
   containerForm.reset();
-  myDialog.closest();
+  myDialog.close();
 });
 // Close Dialog Button
 closeDialog.addEventListener("click", () => {
