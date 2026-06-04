@@ -6,10 +6,10 @@ const myDialog = document.getElementById("myDialog");
 const containerForm = document.getElementById("containerForm");
 const closeDialog = document.getElementById("closeDialog");
 const formCover = document.getElementById("formCover");
-const formTitle = document.getElementById("formTitle").value;
-const formAuthor = document.getElementById("formAuthor").value;
-const formPages = document.getElementById("formPages").value;
-const formStatus = document.getElementById("formStatus").value;
+const formTitle = document.getElementById("formTitle");
+const formAuthor = document.getElementById("formAuthor");
+const formPages = document.getElementById("formPages");
+const formStatus = document.getElementById("formStatus");
 
 // Dom Selection End
 
@@ -164,6 +164,12 @@ cardContainer.addEventListener("click", (event) => {
 containerForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
+
+ const title = formTitleElement.value;
+  const author = formAuthorElement.value;
+  const pages = formPagesElement.value;
+  const status = formStatusElement.value
+
   //  Cover Default And Generator
   const fileCover = formCover.files[0];
   let endCover = "./c-logo.png";
@@ -176,7 +182,7 @@ containerForm.addEventListener("submit", (event) => {
     endCover = URL.createObjectURL(fileCover);
   }
   //Update Function for Store Book
-  storeBook(formTitle, formAuthor, formPages, formStatus, endCover);
+  storeBook(title, author, pages, status, endCover);
   renderWeb();
   containerForm.reset();
   myDialog.closest();
