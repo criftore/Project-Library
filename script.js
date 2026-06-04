@@ -19,7 +19,7 @@ function Book(title, author, pages, read, cover) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.cover = cover || "./c.logo.png";
+  this.cover = cover || "./c-logo.png";
   this.uId = crypto.randomUUID();
   this.info = console.log(
     `${this.title} by ${this.author} has ${this.pages} pages, ${this.read}`,
